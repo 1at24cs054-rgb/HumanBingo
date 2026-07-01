@@ -942,7 +942,7 @@
       "gridSize": 5,
       "timerDuration": 30,
       "leaderboardVisible": true,
-      "status": "paused",
+      "status": "ended",
       "questions": [
         "Find someone who loves to swim",
         "Find someone who can play a musical instrument",
@@ -973,7 +973,85 @@
       "createdAt": "2026-07-01T11:11:38.678317Z",
       "startedAt": "2026-07-01T11:11:59.651494Z",
       "timerExpiresAt": null,
-      "timerRemaining": 1798.244408
+      "timerRemaining": null
+    },
+    "HB3295": {
+      "id": "HB3295",
+      "name": "BATCH-2",
+      "gridSize": 5,
+      "timerDuration": 30,
+      "leaderboardVisible": true,
+      "status": "lobby",
+      "questions": [
+        "Find someone who loves to swim",
+        "Find someone who can play a musical instrument",
+        "Find someone who has the most letters in their last name",
+        "Find someone who does not like broccoli",
+        "Find someone who is afraid of spiders",
+        "Find someone who has had stitches",
+        "Find someone who is an only child",
+        "Find someone who wakes up early",
+        "Find someone who is a couch potato",
+        "Find someone who can whistle",
+        "Find someone who was born in January",
+        "Find someone who drank coffee this morning",
+        "Find someone who wears socks to bed",
+        "Find someone who bites his/her fingernails",
+        "Find someone who has more than four siblings",
+        "Find someone who has argued with a friend recently",
+        "Find someone who snores",
+        "Find someone who has seen a snake in the wild",
+        "Find someone who won a contest",
+        "Find someone who has fallen or thrown up in public",
+        "Find someone who enjoys maths",
+        "Find someone who can use chopsticks",
+        "Find someone who likes very spicy food",
+        "Find someone who hasn't had breakfast today",
+        "Find someone who watches more than one hour of TV every day"
+      ],
+      "createdAt": "2026-07-01T13:38:52.053221Z",
+      "startedAt": null,
+      "timerExpiresAt": null,
+      "timerRemaining": null
+    },
+    "HB2824": {
+      "id": "HB2824",
+      "name": "BATCH-2",
+      "gridSize": 5,
+      "timerDuration": 30,
+      "leaderboardVisible": true,
+      "status": "ended",
+      "questions": [
+        "Find someone who loves to swim",
+        "Find someone who can play a musical instrument",
+        "Find someone who has the most letters in their last name",
+        "Find someone who does not like broccoli",
+        "Find someone who is afraid of spiders",
+        "Find someone who has had stitches",
+        "Find someone who is an only child",
+        "Find someone who wakes up early",
+        "Find someone who is a couch potato",
+        "Find someone who can whistle",
+        "Find someone who was born in January",
+        "Find someone who drank coffee this morning",
+        "Find someone who wears socks to bed",
+        "Find someone who bites his/her fingernails",
+        "Find someone who has more than four siblings",
+        "Find someone who has argued with a friend recently",
+        "Find someone who snores",
+        "Find someone who has seen a snake in the wild",
+        "Find someone who won a contest",
+        "Find someone who has fallen or thrown up in public",
+        "Find someone who enjoys maths",
+        "Find someone who can use chopsticks",
+        "Find someone who likes very spicy food",
+        "Find someone who hasn't had breakfast today",
+        "Find someone who watches more than one hour of TV every day"
+      ],
+      "createdAt": "2026-07-01T13:39:52.949738Z",
+      "startedAt": "2026-07-01T13:40:55.925738Z",
+      "timerExpiresAt": null,
+      "timerRemaining": null
     }
   },
   "players": {
@@ -1572,6 +1650,46 @@
       "gameId": "HB1687",
       "name": "monkey",
       "joinedAt": "2026-07-01T11:12:49.624713Z",
+      "progress": 0,
+      "completedRowColDiagCount": 0,
+      "bingoCardCompleted": false,
+      "completedAt": null
+    },
+    "P70054": {
+      "id": "P70054",
+      "gameId": "HB3295",
+      "name": "aaa",
+      "joinedAt": "2026-07-01T13:39:04.820350Z",
+      "progress": 0,
+      "completedRowColDiagCount": 0,
+      "bingoCardCompleted": false,
+      "completedAt": null
+    },
+    "P18566": {
+      "id": "P18566",
+      "gameId": "HB2824",
+      "name": "ssss",
+      "joinedAt": "2026-07-01T13:41:11.241554Z",
+      "progress": 1,
+      "completedRowColDiagCount": 0,
+      "bingoCardCompleted": false,
+      "completedAt": null
+    },
+    "P32850": {
+      "id": "P32850",
+      "gameId": "HB2824",
+      "name": "aaaa",
+      "joinedAt": "2026-07-01T13:42:25.125313Z",
+      "progress": 0,
+      "completedRowColDiagCount": 0,
+      "bingoCardCompleted": false,
+      "completedAt": null
+    },
+    "P26423": {
+      "id": "P26423",
+      "gameId": "HB2824",
+      "name": "www",
+      "joinedAt": "2026-07-01T13:42:36.009268Z",
       "progress": 0,
       "completedRowColDiagCount": 0,
       "bingoCardCompleted": false,
@@ -5669,6 +5787,530 @@
           "filledWithPlayerName": null
         }
       ]
+    },
+    "P70054": {
+      "playerId": "P70054",
+      "gameId": "HB3295",
+      "grid": [
+        {
+          "questionIndex": 0,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 1,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 2,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 3,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 4,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 5,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 6,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 7,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 8,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 9,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 10,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 11,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 12,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 13,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 14,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 15,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 16,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 17,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 18,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 19,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 20,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 21,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 22,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 23,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 24,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        }
+      ]
+    },
+    "P18566": {
+      "playerId": "P18566",
+      "gameId": "HB2824",
+      "grid": [
+        {
+          "questionIndex": 0,
+          "filledWithPlayerId": "P32850",
+          "filledWithPlayerName": "aaaa"
+        },
+        {
+          "questionIndex": 1,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 2,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 3,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 4,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 5,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 6,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 7,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 8,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 9,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 10,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 11,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 12,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 13,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 14,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 15,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 16,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 17,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 18,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 19,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 20,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 21,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 22,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 23,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 24,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        }
+      ]
+    },
+    "P32850": {
+      "playerId": "P32850",
+      "gameId": "HB2824",
+      "grid": [
+        {
+          "questionIndex": 0,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 1,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 2,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 3,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 4,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 5,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 6,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 7,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 8,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 9,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 10,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 11,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 12,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 13,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 14,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 15,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 16,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 17,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 18,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 19,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 20,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 21,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 22,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 23,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 24,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        }
+      ]
+    },
+    "P26423": {
+      "playerId": "P26423",
+      "gameId": "HB2824",
+      "grid": [
+        {
+          "questionIndex": 0,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 1,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 2,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 3,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 4,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 5,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 6,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 7,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 8,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 9,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 10,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 11,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 12,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 13,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 14,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 15,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 16,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 17,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 18,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 19,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 20,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 21,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 22,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 23,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        },
+        {
+          "questionIndex": 24,
+          "filledWithPlayerId": null,
+          "filledWithPlayerName": null
+        }
+      ]
     }
   },
   "notifications": [
@@ -6958,6 +7600,78 @@
       "type": "join",
       "message": "monkey joined the game!",
       "timestamp": "2026-07-01T11:12:49.624713Z"
+    },
+    {
+      "id": "58d1d391-d469-4a72-adc0-a367680fbaa0",
+      "gameId": "HB1687",
+      "playerId": "ADMIN",
+      "playerName": "Host",
+      "type": "complete",
+      "message": "The game has ended! Check the final Leaderboard results.",
+      "timestamp": "2026-07-01T13:38:49.668572Z"
+    },
+    {
+      "id": "fb1a72c1-f089-4096-a532-27e2def2b6b1",
+      "gameId": "HB3295",
+      "playerId": "P70054",
+      "playerName": "aaa",
+      "type": "join",
+      "message": "aaa joined the game!",
+      "timestamp": "2026-07-01T13:39:04.820350Z"
+    },
+    {
+      "id": "8ddeaf20-0681-463b-9572-22f2712071cd",
+      "gameId": "HB2824",
+      "playerId": "ADMIN",
+      "playerName": "Host",
+      "type": "complete",
+      "message": "The Human Bingo game has officially started! Let's network!",
+      "timestamp": "2026-07-01T13:40:55.925738Z"
+    },
+    {
+      "id": "29f2343b-95db-4720-b87c-e1167e04fd7f",
+      "gameId": "HB2824",
+      "playerId": "P18566",
+      "playerName": "ssss",
+      "type": "join",
+      "message": "ssss joined the game!",
+      "timestamp": "2026-07-01T13:41:11.241554Z"
+    },
+    {
+      "id": "fe5cc3f0-05a9-40ea-afec-a8717e52f929",
+      "gameId": "HB2824",
+      "playerId": "P32850",
+      "playerName": "aaaa",
+      "type": "join",
+      "message": "aaaa joined the game!",
+      "timestamp": "2026-07-01T13:42:25.125313Z"
+    },
+    {
+      "id": "a8f2448e-8d70-492f-9155-1d7e2547ffe5",
+      "gameId": "HB2824",
+      "playerId": "P26423",
+      "playerName": "www",
+      "type": "join",
+      "message": "www joined the game!",
+      "timestamp": "2026-07-01T13:42:36.009268Z"
+    },
+    {
+      "id": "72e53136-2ef2-4a0b-bf42-aa9b3f181cbd",
+      "gameId": "HB2824",
+      "playerId": "P18566",
+      "playerName": "ssss",
+      "type": "fill",
+      "message": "ssss met aaaa!",
+      "timestamp": "2026-07-01T13:42:43.801219Z"
+    },
+    {
+      "id": "79e6752e-bffb-45e2-9db1-d8749b86d0bb",
+      "gameId": "HB2824",
+      "playerId": "ADMIN",
+      "playerName": "Host",
+      "type": "complete",
+      "message": "The game has ended! Check the final Leaderboard results.",
+      "timestamp": "2026-07-01T13:49:43.288864Z"
     }
   ],
   "results": {
