@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, doc, collection, onSnapshot, query } from 'firebase/firestore';
+import { getFirestore, doc, collection, onSnapshot, query, where } from 'firebase/firestore';
 
 let app = null;
 let db = null;
@@ -30,8 +30,8 @@ export function subscribeToGame(gameId, handlers = {}) {
     });
     unsubscribes.push(unsubGame);
 
-    const playersCol = collection(db, `games/${gameId}/players`);
-    const qPlayers = query(playersCol);
+    const playersCol = collection(db, 'players');
+    const qPlayers = query(playersCol, where('gameId', '==', gameId));
     const unsubPlayers = onSnapshot(qPlayers, (snap) => {
       const players = [];
       snap.forEach(d => players.push({ ...d.data(), id: d.id }));
@@ -39,8 +39,8 @@ export function subscribeToGame(gameId, handlers = {}) {
     });
     unsubscribes.push(unsubPlayers);
 
-    const cardsCol = collection(db, `games/${gameId}/cards`);
-    const qCards = query(cardsCol);
+    const cardsCol = collection(db, 'bingoCards');
+    const qCards = query(cardsCol, where('gameId', '==', gameId));
     const unsubCards = onSnapshot(qCards, (snap) => {
       snap.forEach(d => {
         const payload = { ...d.data(), playerId: d.id };
@@ -49,7 +49,7 @@ export function subscribeToGame(gameId, handlers = {}) {
     });
     unsubscribes.push(unsubCards);
 
-    const resultsDoc = doc(db, 'games', gameId, 'meta', 'results');
+    const resultsDoc = doc(db, 'results', gameId);
     const unsubResults = onSnapshot(resultsDoc, (snap) => {
       if (!snap.exists()) return;
       handlers.onResults && handlers.onResults(snap.data());

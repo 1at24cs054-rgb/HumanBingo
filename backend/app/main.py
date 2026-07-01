@@ -63,10 +63,17 @@ async def _timer_monitor_task():
     """
     Background task: broadcasts timer ticks for active games and auto-ends games when expired.
     """
-    from app import database
+    from app import database, models
     while True:
         try:
-            all_games = list(database.local_db.data.get("games", {}).values()) if not database.firebase_initialized else []
+            if database.firebase_initialized:
+                # Query active games from Firestore
+                db_client = database.db_client
+                active_games = db_client.collection("games").where("status", "==", models.GameStatus.ACTIVE.value).stream()
+                all_games = [g.to_dict() for g in active_games]
+            else:
+                all_games = list(database.local_db.data.get("games", {}).values())
+
             now = datetime.utcnow()
             for g in all_games:
                 status = g.get("status")
@@ -104,21 +111,12 @@ async def _timer_monitor_task():
                             "leaderboard": leaderboard,
                             "generatedAt": datetime.utcnow().isoformat() + "Z"
                         }
-                        # Save results persistently
-                        if not database.firebase_initialized:
-                            await database.local_db.save_results(game_id, results_payload)
-                        else:
-                            # If using Firestore, write to results collection
-                            db_client = database.db_client
-                            try:
-                                db_client.collection("results").document(game_id).set(results_payload)
-                                database.publish_sse_event(game_id, "results_updated", results_payload)
-                            except Exception:
-                                pass
+                        await database.save_results(game_id, results_payload)
 
         except Exception as e:
             logger.exception("Timer monitor error: %s", e)
-        await asyncio.sleep(1)
+        # Sleep 5 seconds in Firebase mode to conserve reads, 1 second in local DB mode
+        await asyncio.sleep(5 if database.firebase_initialized else 1)
 
 # start background timer monitor
 @app.on_event("startup")
