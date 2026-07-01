@@ -5,7 +5,7 @@ services:
     plan: free
     branch: main
     pythonVersion: 3.12.15
-    buildCommand: CARGO_HOME=/tmp/cargo python -m pip install --upgrade pip setuptools wheel && CARGO_HOME=/tmp/cargo python -m pip install -r requirements.txt
+    buildCommand: RUSTUP_HOME=/tmp/rustup CARGO_HOME=/tmp/cargo python -m pip install --upgrade pip setuptools wheel && RUSTUP_HOME=/tmp/rustup CARGO_HOME=/tmp/cargo python -m pip install -r requirements.txt
     startCommand: gunicorn -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:$PORT
     root: backend
     autoDeploy: true
