@@ -5,7 +5,7 @@ services:
     plan: free
     branch: main
     pythonVersion: 3.12.15
-    buildCommand: RUSTUP_HOME=/tmp/rustup CARGO_HOME=/tmp/cargo python -m pip install --upgrade pip setuptools wheel && RUSTUP_HOME=/tmp/rustup CARGO_HOME=/tmp/cargo python -m pip install -r requirements.txt
+    buildCommand: bash -lc 'export RUSTUP_HOME=/tmp/rustup CARGO_HOME=/tmp/cargo && curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable --profile minimal && source /tmp/rustup/env && rustup default stable && python -m pip install --upgrade pip setuptools wheel && python -m pip install -r requirements.txt'
     startCommand: gunicorn -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:$PORT
     root: backend
     autoDeploy: true
