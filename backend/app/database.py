@@ -59,20 +59,45 @@ def publish_sse_event(game_id: str, event_type: str, data: Any):
 firebase_initialized = False
 db_client = None
 
-if os.path.exists(config.FIREBASE_CREDENTIALS_PATH):
+
+def _initialize_firebase():
+    global firebase_initialized, db_client
     try:
         import firebase_admin
         from firebase_admin import credentials, firestore
-        
-        cred = credentials.Certificate(config.FIREBASE_CREDENTIALS_PATH)
-        firebase_admin.initialize_app(cred)
+
+        credential_source = None
+        if os.path.exists(config.FIREBASE_CREDENTIALS_PATH):
+            credential_source = config.FIREBASE_CREDENTIALS_PATH
+        elif config.FIREBASE_PROJECT_ID and config.FIREBASE_CLIENT_EMAIL and config.FIREBASE_PRIVATE_KEY:
+            credential_source = {
+                "type": "service_account",
+                "project_id": config.FIREBASE_PROJECT_ID,
+                "private_key": config.FIREBASE_PRIVATE_KEY,
+                "client_email": config.FIREBASE_CLIENT_EMAIL,
+                "token_uri": "https://oauth2.googleapis.com/token",
+            }
+
+        if not credential_source:
+            logger.info("Firebase environment variables not configured. Running in Local JSON Database Mode.")
+            return False
+
+        if not firebase_admin._apps:
+            cred = credentials.Certificate(credential_source)
+            firebase_admin.initialize_app(cred)
         db_client = firestore.client()
         firebase_initialized = True
         logger.info("Firebase Firestore successfully initialized!")
+        return True
     except Exception as e:
         logger.error(f"Error initializing Firebase: {e}. Falling back to Local JSON database.")
-else:
-    logger.info(f"Firebase credentials not found at {config.FIREBASE_CREDENTIALS_PATH}. Running in Local JSON Database Mode.")
+        firebase_initialized = False
+        db_client = None
+        return False
+
+
+if _initialize_firebase():
+    firebase_initialized = True
 
 # --- Local File DB Mock Database ---
 class LocalJSONDatabase:

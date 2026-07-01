@@ -1,5 +1,6 @@
+import os
 import requests, time
-BASE='http://127.0.0.1:8000/api'
+BASE=os.getenv('API_BASE_URL', 'http://127.0.0.1:8000') + '/api'
 code='HB1827'
 
 # 1) Join a new player

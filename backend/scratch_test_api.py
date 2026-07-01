@@ -1,14 +1,18 @@
+import os
 import requests
+
+BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")
+
 
 def test_api():
     try:
         # Check health endpoint
-        res = requests.get("http://localhost:8000/api/health")
+        res = requests.get(f"{BASE_URL}/api/health")
         print("Health status code:", res.status_code)
         print("Health response JSON:", res.json())
         
         # Test creating a game
-        res_create = requests.post("http://localhost:8000/api/games", json={
+        res_create = requests.post(f"{BASE_URL}/api/games", json={
             "name": "Test Game",
             "gridSize": 4,
             "timerDuration": 15
@@ -19,7 +23,7 @@ def test_api():
         game_code = game_data.get("id")
         
         # Join player 1
-        res_join1 = requests.post(f"http://localhost:8000/api/games/{game_code}/join", json={
+        res_join1 = requests.post(f"{BASE_URL}/api/games/{game_code}/join", json={
             "name": "Player 1",
             "gameCode": game_code
         })
@@ -32,7 +36,7 @@ def test_api():
         print("Player 1 card:", p1_data.get("card"))
         
         # Join player 2
-        res_join2 = requests.post(f"http://localhost:8000/api/games/{game_code}/join", json={
+        res_join2 = requests.post(f"{BASE_URL}/api/games/{game_code}/join", json={
             "name": "Player 2",
             "gameCode": game_code
         })
@@ -43,7 +47,7 @@ def test_api():
         
         # Delete test game
         # First login as admin
-        res_login = requests.post("http://localhost:8000/api/admin/login", json={
+        res_login = requests.post(f"{BASE_URL}/api/admin/login", json={
             "username": "admin",
             "password": "password123"
         })
@@ -51,7 +55,7 @@ def test_api():
         token = res_login.json().get("access_token")
         
         res_del = requests.delete(
-            f"http://localhost:8000/api/games/{game_code}",
+            f"{BASE_URL}/api/games/{game_code}",
             headers={"Authorization": f"Bearer {token}"}
         )
         print("Delete game status:", res_del.status_code)

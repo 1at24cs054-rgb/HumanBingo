@@ -7,7 +7,7 @@ import { Award, Download, ArrowLeft, RefreshCw, Trophy, Users, Compass, Flame, S
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const API_BASE_URL = '/api';
+const API_BASE_URL = (import.meta.env.VITE_API_URL || '/api').replace(/\/$/, '');
 
 export const Results = () => {
   const navigate = useNavigate();
