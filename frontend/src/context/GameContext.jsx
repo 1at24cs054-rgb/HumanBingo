@@ -358,6 +358,7 @@ export const GameProvider = ({ children }) => {
     }
   }, 3000);
 };
+  };
 
   const disconnectSSE = () => {
     if (eventSourceRef.current) {
