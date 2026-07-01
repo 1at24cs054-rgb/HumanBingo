@@ -70,6 +70,7 @@ Quick Vercel steps:
 2. Set the root directory to `frontend`, install command `npm install`, and build command `npm run build`.
 3. Set environment variable `REACT_APP_API_URL` or update frontend config to point to the Render backend URL after deployment.
 
+
 If you want, I can add a `render.yaml` for automatic Render setup and a minimal Vercel configuration file. Tell me if you'd like Docker-based deployments instead.
 
 ## License
