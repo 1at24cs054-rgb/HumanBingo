@@ -293,105 +293,71 @@ export const GameProvider = ({ children }) => {
   // --- Real-time SSE Connection ---
 
   const connectSSE = (code) => {
-    if (eventSourceRef.current) {
-      eventSourceRef.current.close();
-    }
+  if (eventSourceRef.current) {
+    eventSourceRef.current.close();
+  }
 
-    const es = new EventSource(`${API_BASE_URL}/games/${code}/sse`);
+  const es = new EventSource(`${API_BASE_URL}/games/${code}/sse`);
+  eventSourceRef.current = es;
+
+  es.onopen = () => {
+  console.log("✅ SSE Connected");
+
+  if (eventSourceRef.current !== es) {
     eventSourceRef.current = es;
+  }
+};
 
-    es.addEventListener('initial_state', (e) => {
-      const data = JSON.parse(e.data);
-      setGame(normalizeGamePayload(data.game));
-      setPlayers(data.players);
-      setLeaderboard(data.leaderboard);
-      setNotifications(data.notifications);
+  es.addEventListener("initial_state", (e) => {
+    const data = JSON.parse(e.data);
+
+    setGame(normalizeGamePayload(data.game));
+    setPlayers(data.players || []);
+    setLeaderboard(data.leaderboard || []);
+    setNotifications(data.notifications || []);
+  });
+
+  es.addEventListener("game_update", (e) => {
+    setGame(normalizeGamePayload(JSON.parse(e.data)));
+  });
+
+  es.addEventListener("player_update", (e) => {
+    const data = JSON.parse(e.data);
+
+    setPlayers((prev) => {
+      const idx = prev.findIndex((p) => p.id === data.id);
+
+      if (idx === -1) return [...prev, data];
+
+      const updated = [...prev];
+      updated[idx] = data;
+      return updated;
     });
+  });
 
-    es.addEventListener('game_update', (e) => {
-      const data = JSON.parse(e.data);
-      setGame(normalizeGamePayload(data));
-    });
+  es.addEventListener("leaderboard_update", (e) => {
+    setLeaderboard(JSON.parse(e.data));
+  });
 
-    es.addEventListener('player_update', (e) => {
-      const data = JSON.parse(e.data);
-      
-      // Update local players roster
-      setPlayers(prev => {
-        const index = prev.findIndex(p => p.id === data.id);
-        if (index !== -1) {
-          const updated = [...prev];
-          updated[index] = data;
-          return updated;
-        }
-        return [...prev, data];
-      });
+  es.addEventListener("notification", (e) => {
+    const data = JSON.parse(e.data);
 
-      // If this is the current player, update local profile state
-      if (player && data.id === player.id) {
-        setPlayer(data);
-        localStorage.setItem('player_profile', JSON.stringify(data));
-      }
-    });
+    setNotifications((prev) => [data, ...prev].slice(0, 30));
+  });
 
-    es.addEventListener('card_update', (e) => {
-      const data = JSON.parse(e.data);
-      if (player && data.playerId === player.id) {
-        setCard(data);
-      }
-    });
+ es.onerror = () => {
+  console.warn("SSE disconnected");
 
-    es.addEventListener('timer_tick', (e) => {
-      const data = JSON.parse(e.data);
-      // Merge only the timer-related fields to avoid overwriting local transient state
-      setGame(prev => prev ? { ...prev, timerExpiresAt: data.timerExpiresAt, timerRemaining: data.remaining, status: data.status } : prev);
-    });
+  es.close();
+  eventSourceRef.current = null;
 
-    es.addEventListener('leaderboard_update', (e) => {
-      const data = JSON.parse(e.data);
-      setLeaderboard(data);
-    });
-
-    es.addEventListener('notification', (e) => {
-      const data = JSON.parse(e.data);
-      setNotifications(prev => [data, ...prev].slice(0, 30));
-
-      // Trigger custom toasts for gameplay activities
-      if (data.type === 'join' && data.playerId !== player?.id) {
-        toast(`${data.message}`, { icon: '👋' });
-        playSound('join');
-      } else if (data.type === 'bingo') {
-        toast.success(data.message, { icon: '🎉', duration: 4000 });
-        if (data.playerId === player?.id) {
-          playSound('bingo');
-        }
-      } else if (data.type === 'complete') {
-        toast.success(data.message, { icon: '👑', duration: 5000 });
-        if (data.playerId === player?.id) {
-          playSound('complete');
-        }
-      }
-    });
-
-    es.addEventListener('game_deleted', () => {
-      toast.error('The game session has been deleted by the host.');
-      playerLeaveGame();
-    });
-
-    es.onerror = (err) => {
-      console.warn('SSE connection error. Retrying...', err);
-      toast.error('Realtime connection lost. Reconnecting...');
-      // Attempt to gracefully reconnect after short delay
-      setTimeout(() => {
-        try {
-          if (eventSourceRef.current) {
-            eventSourceRef.current.close();
-          }
-        } catch (e) {}
-        connectSSE(code);
-      }, 3000);
-    };
-  };
+  setTimeout(() => {
+    if (game?.id && !eventSourceRef.current) {
+      console.log("Reconnecting SSE...");
+      connectSSE(game.id);
+    }
+  }, 3000);
+};
 
   const disconnectSSE = () => {
     if (eventSourceRef.current) {
